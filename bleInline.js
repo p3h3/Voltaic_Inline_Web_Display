@@ -22,9 +22,6 @@ async function startInlineNotifications() {
         ]
     })
         .then(device => {
-            bleInlineDevice = device;
-
-
             device.addEventListener('gattserverdisconnected', ()=>{
                 bleInlineConnected = false;
                 inlineDisconnected();
