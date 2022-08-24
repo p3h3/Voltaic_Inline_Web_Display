@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Inline Web Display</title>
+
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+<div class="header">
+    <div id="bluetoothStatus">
+        <h2 id="connectionStatus">Connection Status</h2>
+        <button id="connectLastInlineButton">Connect Inline Board</button>
+    </div>
+</div>
+
+<table id="main-grid">
+    <thead>
+    <tr class="no-height">
+        <th></th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="td-1row">
+            <div class="gauge-div" id="inline-gauge-template">
+                <div class="speed-gauge-flex-div">
+                    <div class="normal-div">
+                        <h3 class="h0-label">Speed:</h3>
+                        <h0 id="speed-val">Value</h0>
+                    </div>
+                </div>
+                <div class="watt-volt-gauge-flex-div">
+                    <table class="table-2channels">
+                        <tr>
+                            <td class="td-2channels">
+                                <div>
+                                    <h4 class="llh2"><button id="resetTripOdo">Reset</button>Trip Odometer:</h4>
+                                    <h3 id="trip-odo-val">Value</h3>
+                                </div>
+                            </td>
+                            <td class="td-2channels" id="speed-gauge-right-box">
+                                <div>
+                                    <h4 class="llh2">Vehicle Odometer:</h4>
+                                    <h3 id="vehicle-odo-val">Value</h3>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </td>
+    </tr>
+
+
+</table>
+
+
+<script src="gauges.js"></script>
+<script src="bleInline.js"></script>
+<script src="renderer.js"></script>
+
+</body>
+</html>

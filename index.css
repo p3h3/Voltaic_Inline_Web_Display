@@ -1,0 +1,171 @@
+@font-face {
+    font-family: Pervitina;
+    src: url(Pervitina-Dex.ttf);
+}
+html{
+    font-family: Pervitina, serif;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body{
+    margin: 0;
+    padding: 1px;
+}
+
+.llh{
+    line-height: 0.2vw;
+    margin-top: 1.1vw;
+    margin-bottom: 3.2vw;
+}
+
+.llh2{
+    margin-top: 3.2vw;
+    margin-bottom: 1.1vw;
+    color: #575757;
+}
+
+h4{
+    font-size: 3vw;
+    font-weight: normal;
+}
+h3{
+    font-size: 5vw;
+    font-weight: normal;
+}
+h2{
+    font-size: 2vw;
+    font-family: Calibri, serif;
+}
+h1{
+    font-size: 4vw;
+    font-weight: normal;
+}
+h0{
+    font-size: 15vw;
+    font-weight: normal;
+}
+
+.gauge-div{
+    width: 95%;
+    height: 95%;
+    margin: 2.5%;
+
+    padding-bottom: 1em;
+
+    -webkit-box-sizing: border-box;
+
+    border-radius: 1em;
+    border: 4px solid darkgrey;
+}
+
+.speed-gauge-flex-div{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    height: 80%;
+
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.normal-div{
+    text-align: center;
+    display: block;
+}
+
+.h0-label{
+    margin-bottom: 0;
+    color: #575757;
+}
+
+
+.watt-volt-gauge-flex-div{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#bluetoothStatus{
+    width: 100%;
+    text-align: center;
+}
+
+.header{
+    display:flex;
+    text-align: center;
+}
+
+
+#main-grid {
+    display: grid;
+    grid-auto-flow: column;
+    border-collapse: collapse;
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+
+    -webkit-border-horizontal-spacing: 0;
+    -webkit-border-vertical-spacing: 0;
+}
+
+.td-1row {
+    text-align: left;
+    -webkit-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    width: 95vw;
+    height: 95vw;
+}
+.td-2channels {
+    -webkit-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+    border-right: dotted 2px #7b7b7b;
+
+    text-align: center;
+
+    font-family: Pervitina;
+}
+
+#watt-gauge-info-4{
+    border-right: none;
+}
+
+.table-2channels {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#speed-gauge-right-box{
+    border-right: none;
+}
+
+.no-height {
+    height: 0;
+}
+
+#connectLastInlineButton{
+    font-family: Pervitina;
+    font-weight: normal;
+}
+
+#resetTripOdo{
+    font-family: Pervitina;
+    font-weight: normal;
+    font-size: 2vw;
+    padding: 0.5vw;
+}
