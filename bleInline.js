@@ -1,21 +1,18 @@
 function log(s){console.log(s);}
 
-const inlineDataLoggingServiceUuid = "e9ea0200-e19b-482d-9293-c7907585fc48";
-    const inlineDataLoggingCharacteristicUuid= "e9ea0201-e19b-482d-9293-c7907585fc48";
-    let inlineDataLoggingCharacteristic;
+const inlineDataLoggingServiceUuid = "ffd70200-fe1b-4b6d-aba1-36cc0bab3e3d";
+const inlineDataLoggingCharacteristicUuid= "ffd70201-fe1b-4b6d-aba1-36cc0bab3e3d";
+let inlineDataLoggingCharacteristic;
 
-const inlineConfigServiceUuid = "e9ea0100-e19b-482d-9293-c7907585fc48";
-    const inlineOdometerCharacteristicUuid= "e9ea0102-e19b-482d-9293-c7907585fc48";
-    let inlineOdometerCharacteristic;
+const inlineConfigServiceUuid = "ffd70100-fe1b-4b6d-aba1-36cc0bab3e3d";
+const inlineOdometerCharacteristicUuid= "ffd70102-fe1b-4b6d-aba1-36cc0bab3e3d";
+let inlineOdometerCharacteristic;
 
 let bleInlineConnected = false;
 
 async function startInlineNotifications() {
     navigator.bluetooth.requestDevice({
         acceptAllDevices: true,
-        services: [
-            inlineDataLoggingServiceUuid,
-            inlineConfigServiceUuid],
         optionalServices: [
             inlineDataLoggingServiceUuid,
             inlineConfigServiceUuid,
@@ -91,6 +88,7 @@ function handleInlineLoggingNotifications(event) {
     let value = event.target.value;
 
     if(value.byteLength > 1) {
+        console.log(value);
         processInlineData(value);
     }else{
         console.log("Something wrong with incoming BLE Data!");

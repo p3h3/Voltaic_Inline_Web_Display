@@ -61,17 +61,27 @@ h0{
     border: 4px solid darkgrey;
 }
 
+
 .speed-gauge-flex-div{
     overflow:hidden;
     white-space:nowrap;
     text-overflow:ellipsis;
-    height: 80%;
+    height: 45%;
 
     align-items: center;
     justify-content: center;
     display: flex;
 }
+.speed-rpm-gauge-flex-div{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    height: 35%;
 
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
 .normal-div{
     text-align: center;
     display: block;
