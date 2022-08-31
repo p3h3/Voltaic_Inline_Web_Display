@@ -23,6 +23,10 @@ async function startInlineNotifications() {
                 bleInlineConnected = false;
                 inlineDisconnected();
             });
+            device.addEventListener('gattserverconnected', ()=>{
+                bleInlineConnected = true;
+                inlineConnected();
+            });
             return device.gatt.connect();
         })
         .then(server => {
@@ -88,7 +92,6 @@ function handleInlineLoggingNotifications(event) {
     let value = event.target.value;
 
     if(value.byteLength > 1) {
-        console.log(value);
         processInlineData(value);
     }else{
         console.log("Something wrong with incoming BLE Data!");

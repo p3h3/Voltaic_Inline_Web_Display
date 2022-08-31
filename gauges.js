@@ -7,6 +7,7 @@ let vehicleOdometerValue = document.getElementById("vehicle-odo-val");
 let tripOdometerValue = document.getElementById("trip-odo-val");
 let vehicleSpeedValue = document.getElementById("speed-val");
 let resetTripButton = document.getElementById("resetTripOdo");
+let vehicleRPMValue = document.getElementById("speed-rpm-val");
 
 
 inlineGaugeDiv.style.opacity = "0.5";
@@ -19,11 +20,17 @@ function setSpeedGaugeValues(values){
         vehicleSpeedValue.innerHTML = "-" + values.speed.toFixed(1) + "km/h";
     }
 
-    tripOdometerValue.innerHTML = values.tripOdo + "km";
-    vehicleOdometerValue.innerHTML = values.vehicleOdo + "km";
+    vehicleRPMValue.innerHTML = values.rpm + "RPM";
+
+    tripOdometerValue.innerHTML = (values.tripOdo / 1000).toFixed(2) + "m";
+
+    vehicleOdometerValue.innerHTML = (Math.floor((values.vehicleOdo / 100)) / 10).toFixed(1) + "km";
+
 }
 
+
 resetTripButton.addEventListener("click", () => {
+    console.log("resetting trip odometer");
     inlineOdometerCharacteristic.writeValueWithoutResponse(Uint8Array.from([0b00000001]).buffer);
 });
 
